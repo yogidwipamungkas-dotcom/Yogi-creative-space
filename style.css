@@ -452,84 +452,263 @@ h2 span {
 
 
 /* ========================================
-   6. ABOUT SECTION
+   ABOUT ME — MODERN EDITORIAL
+   Matching Existing Portfolio Design
 ======================================== */
 
-.section-grid {
+.about.section-grid {
     display: grid;
-    grid-template-columns: 150px 1fr 270px;
-    gap: 36px;
+    grid-template-columns: 140px minmax(0, 1.35fr) minmax(260px, .85fr);
+    gap: 38px;
+    align-items: start;
+
+    padding-top: 85px;
+    padding-bottom: 85px;
 
     border-top: 1px solid var(--line);
-
-    padding-top: 75px;
-    padding-bottom: 75px;
 }
 
-.section-kicker {
-    font: 10px var(--mono);
-    letter-spacing: 1.5px;
-    color: var(--accent);
-}
+/* SECTION LABEL */
 
-.section-kicker span:first-child {
+.about-kicker-note {
     display: block;
-    color: #737a71;
-    margin-bottom: 10px;
+    margin-top: 16px;
+
+    color: var(--green);
+    font: 9px var(--mono);
+    letter-spacing: 1.5px;
+
+    writing-mode: initial;
+    transform: none;
 }
 
-.about-main h2,
-.education-content h2 {
-    font-size: clamp(28px, 3vw, 39px);
-    letter-spacing: -1.5px;
-    line-height: 1.18;
-    margin: 0 0 20px;
+/* MAIN CONTENT */
+
+.about-main {
+    min-width: 0;
 }
 
-.about-main > p:last-child {
-    font-size: 13px;
-    line-height: 1.9;
-    color: var(--muted);
+.about-main .eyebrow {
+    font: 10px var(--mono);
+    letter-spacing: 2px;
+    color: var(--accent);
+    margin-bottom: 19px;
+}
+
+.about-main h2 {
+    font-family: var(--font);
+    font-size: clamp(34px, 4vw, 53px);
+    font-weight: 800;
+    letter-spacing: -2.5px;
+    line-height: 1.12;
+
+    margin: 0 0 25px;
+}
+
+.about-main h2 span {
+    color: var(--accent2);
+}
+
+.about-main .about-intro {
     max-width: 650px;
+
+    font-family: var(--font);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.9;
+
+    color: #e1e1d9;
+
+    margin: 0 0 17px;
+}
+
+.about-main .about-detail {
+    max-width: 650px;
+
+    font-family: var(--font);
+    font-size: 12px;
+    line-height: 2;
+
+    color: var(--muted);
+
     margin: 0;
 }
 
-/* Personal values */
+/* AREAS OF INTEREST */
+
+.about-focus {
+    margin-top: 30px;
+    padding-top: 20px;
+
+    border-top: 1px solid var(--line);
+}
+
+.about-focus > span {
+    font: 9px var(--mono);
+    letter-spacing: 1.5px;
+    color: var(--green);
+}
+
+.about-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 13px;
+}
+
+.about-tags span {
+    font: 10px var(--font);
+    font-weight: 600;
+
+    color: var(--accent2);
+
+    background: rgba(232,162,76,.07);
+    border: 1px solid rgba(232,162,76,.20);
+
+    border-radius: 4px;
+    padding: 8px 11px;
+
+    transition: .2s ease;
+}
+
+.about-tags span:hover {
+    background: rgba(232,162,76,.14);
+    border-color: var(--accent);
+}
+
+/* CORE VALUES */
 
 .value-list {
-    border-left: 1px solid var(--line);
-    padding-left: 25px;
-
     display: flex;
     flex-direction: column;
-    gap: 19px;
+    gap: 0;
+
+    margin: 0;
+    padding: 0;
+
+    border: 0;
+    min-width: 0;
 }
 
-.value-list > div {
-    display: flex;
-    gap: 14px;
+.value-list-heading {
+    padding-bottom: 17px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 0;
 }
 
-.value-list b {
-    font: 10px var(--mono);
-    color: var(--accent);
+.value-list-heading .eyebrow {
+    margin-bottom: 7px;
+    font-size: 9px;
 }
 
-.value-list strong,
-.value-list small {
-    display: block;
-}
-
-.value-list strong {
-    font-size: 12px;
-}
-
-.value-list small {
-    font-size: 10px;
+.value-list-heading > span {
+    font: 9px var(--mono);
+    letter-spacing: 1.3px;
     color: var(--muted);
-    margin-top: 3px;
 }
 
+.value-item {
+    display: grid;
+    grid-template-columns: 32px 1fr;
+    gap: 12px;
+
+    padding: 18px 0;
+
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid var(--line);
+    border-radius: 0;
+
+    transition: padding-left .2s ease;
+}
+
+.value-item:hover {
+    padding-left: 5px;
+    transform: none;
+    background: transparent;
+    border-color: rgba(232,162,76,.35);
+}
+
+.value-item > b {
+    font: 11px var(--mono);
+    color: var(--accent);
+    padding-top: 2px;
+}
+
+.value-item strong {
+    display: block;
+
+    font: 700 12px var(--font);
+    color: var(--text);
+
+    margin-bottom: 5px;
+}
+
+.value-item small {
+    display: block;
+
+    font: 10px var(--font);
+    line-height: 1.8;
+
+    color: var(--muted);
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+
+    .about.section-grid {
+        grid-template-columns: 110px minmax(0, 1fr);
+        gap: 28px;
+    }
+
+    .value-list {
+        grid-column: 2;
+        margin-top: 15px;
+    }
+
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+
+    .about.section-grid {
+        display: block;
+        padding-top: 55px;
+        padding-bottom: 55px;
+    }
+
+    .section-kicker {
+        margin-bottom: 30px;
+    }
+
+    .about-main h2 {
+        font-size: clamp(34px, 10vw, 43px);
+        letter-spacing: -1.8px;
+    }
+
+    .about-main .about-intro {
+        font-size: 13px;
+    }
+
+    .about-main .about-detail {
+        font-size: 11px;
+    }
+
+    .about-focus {
+        margin-top: 25px;
+    }
+
+    .value-list {
+        margin-top: 35px;
+    }
+
+    .value-item {
+        padding: 15px 0;
+    }
+
+}
 
 /* ========================================
    7. EXPERIENCE SECTION
