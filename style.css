@@ -2066,3 +2066,30 @@ h2 span {
     }
 
 }
+
+/* Layout otomatis */
+.section-wrap {
+    width: min(100% - 48px, 1760px);
+    margin-inline: auto;
+}
+
+/* Ukuran tulisan fleksibel */
+h1 {
+    font-size: clamp(48px, 7vw, 104px);
+}
+
+/* Kolom fleksibel */
+.hero {
+    display: grid;
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 0.9fr);
+    gap: clamp(20px, 4vw, 70px);
+}
+
+/* Otomatis menjadi satu kolom */
+@media (max-width: 760px) {
+    .hero {
+        grid-template-columns: 1fr;
+    }
+}
